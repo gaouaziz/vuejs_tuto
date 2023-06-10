@@ -4,22 +4,28 @@
 <head>
     <meta charset="utf-8">
     <title>Tuto Learn Vue.js</title>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="importmap">
+        {
+          "imports": {
+            "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+          }
+        }
+      </script>
 </head>
 
 <body>
     <div id="app">{{ message }}</div>
-    <script>
-        const { createApp } = Vue
-
+    <script type="module">
+        import { createApp } from 'vue'
+      
         createApp({
-            data() {    
-                return {
-                    message: 'Hello Vue!'
-                }
+          data() {
+            return {
+              message: 'Hello Vue Tuto!'
             }
+          }
         }).mount('#app')
-    </script>
+      </script>
 </body>
 
 </html>
